@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open-video-clipper"
+version = "0.1.0"
+description = "Local-first, open-source vertical video clip generator powered by FFmpeg"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Open source contributors"}]
+
+[project.optional-dependencies]
+transcribe = ["faster-whisper>=1.0"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+open-video-clipper = "clipper.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
